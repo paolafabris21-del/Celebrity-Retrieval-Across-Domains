@@ -35,4 +35,40 @@ Face detection and alignment for FaceNet is handled by MTCNN (160×160 px crop,
 margin=20, largest face only). When MTCNN fails to detect a face, a centre-square
 crop resized to 160×160 is used as fallback.
 
-## Repository Structure
+## Requirements
+```bash
+pip install torch torchvision transformers facenet-pytorch Pillow
+```
+PyTorch must be installed with CUDA support:
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+```
+
+## Usage
+1. Set `data_folder` in `ensemble_final.py` to the folder containing `query/` and `gallery/`
+2. Run:
+```bash
+python ensemble_final.py
+```
+Results are saved to `results.json` as a dictionary mapping each query filename
+to its ordered list of 10 gallery filenames.
+
+## Results Summary
+
+| Method | Final Score |
+|--------|-------------|
+| CLIP ViT-L/14 — CLS token (zero-shot) | 287 |
+| CLIP ViT-L/14 — pooler output (zero-shot) | 655 |
+| CLIP + ArcFace fine-tuning (5 epochs) | 670 |
+| CLIP + ArcFace fine-tuning (15 epochs) | 710 |
+| DINOv2 (zero-shot) | 119 |
+| CLIP + DINOv2 ensemble (0.5/0.5) | 643 |
+| FaceNet vggface2 — 160×160 | 744 |
+| FaceNet casia-webface + CLIP (0.7/0.3) | 748 |
+| FaceNet vggface2 + CLIP (0.7/0.3) | 784 |
+| **Triple ensemble (0.6/0.1/0.3)** | **786** |
+
+## Hardware
+- GPU: NVIDIA Tesla V100-PCIE (16 GB VRAM)
+- OS: Ubuntu 20.04
+- CUDA: 12.4
