@@ -42,6 +42,8 @@ pip install transformers facenet-pytorch Pillow
 ```
 
 ## Usage
+Note: Before running, open ensemble_final.py and set data_folder (line 1 of the Config section) to the path of your local folder containing query/ and gallery/. The default value /home/disi is the path used on the competition VM.
+
 1. Set `data_folder` in `ensemble_final.py` to the folder containing `query/` and `gallery/`
 2. Run:
 ```bash
