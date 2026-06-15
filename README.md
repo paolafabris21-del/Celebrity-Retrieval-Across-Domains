@@ -24,7 +24,7 @@ Triple ensemble of three pretrained frozen encoders:
 |-------|-------------|---------------|--------|
 | FaceNet (InceptionResnetV1) | VGGFace2 | 512-d | 0.6 |
 | FaceNet (InceptionResnetV1) | CASIA-WebFace | 512-d | 0.1 |
-| CLIP ViT-L/14 | OpenAI (image-text) | 768-d | 0.3 |
+| CLIP ViT-L/14 | OpenAI (image-text) | 768-d (projected) | 0.3 |
 
 Each model produces L2-normalised embeddings. For each encoder a query×gallery
 cosine similarity matrix is computed, normalised to [0,1] via min-max scaling,
