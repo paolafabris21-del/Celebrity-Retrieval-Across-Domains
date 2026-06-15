@@ -16,6 +16,7 @@ Usage:
 Requirements:
     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
     pip install transformers facenet-pytorch Pillow
+    CUDA install required for GPU support. For CPU-only, use: pip install torch torchvision
 """
  
 import os
