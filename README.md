@@ -37,11 +37,8 @@ crop resized to 160×160 is used as fallback.
 
 ## Requirements
 ```bash
-pip install torch torchvision transformers facenet-pytorch Pillow
-```
-PyTorch must be installed with CUDA support:
-```bash
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+pip install transformers facenet-pytorch Pillow
 ```
 
 ## Usage
