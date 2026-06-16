@@ -1,6 +1,6 @@
 # Celebrity Retrieval Across Domains — Model Minds
 
-Final submission for the Intro to Machine Learning Competition Project  
+Final submission for the Introduction to Machine Learning Competition Project  
 **University of Trento — M.Sc. Data Science — Spring 2026**  
 **Group:** Model Minds  
 **Final score:** 786 / 1000  
